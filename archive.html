@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  font-family: Helvetica, sans-serif;
+}
+
+h2{
+  color: #840028;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #870028;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+<img src="https://i.postimg.cc/NM2C82f5/lewislogo.png" alt="Italian Trulli">
+<h3> Lewis Univeristy's Archived Newspapers</h3>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>2018 Issues</h2>
+        <a href="https://www.dropbox.com/s/nxn1l6dind8x050/2-5-18%20Issue%20%281%29.pdf?dl=0">Feb 5th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/06gq5q0o50mytpp/2-26-18%20Issue.pdf?dl=0">Feb 26th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/uwz5mv934taf6o1/3-26-18%20Issue.pdf?dl=0&m=">March 26th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/eup5akysn7trs20/5-7-18%20Issue.pdf?dl=0&m=">May 7th</a> &nbsp;<br>
+        <br>
+        <a href="https://www.dropbox.com/s/m6guy6ssythno46/Issue%20PDF%209-17-18.pdf?dl=0&m=">Sept 17th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/8wfxljemf64dbwb/Issue%20PDF%2010-1-18.pdf?dl=0">Oct 1st</a>&nbsp;
+        <a href="https://www.dropbox.com/s/wsqj7jm2jihw0yk/Issue%20PDF%2010-22-18.pdf?dl=0&m=">Oct 22nd</a> &nbsp;
+        <a href="https://www.dropbox.com/s/90g7l3qqzjeqvlk/Issue%20PDF%2011-5-18.pdf?dl=0">Nov 5th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/ipxyvdtn6uhdgup/Issue%20PDF%2011-19-18.pdf?dl=0">Nov 19th</a> &nbsp;<br>
+        <br>
+        <a href="https://www.dropbox.com/s/1zypyxwqhy6221s/Issue%20PDF%2012-10-18.pdf?dl=0">Dec 10th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/8dystnja37pgg6x/Lyer%202018.pdf?dl=0">The Lyer</a> &nbsp;
+        <a href="https://www.dropbox.com/s/1f3k3t48ajrbv2r/Supplement2018.pdf?dl=0">Supplement</a> &nbsp;
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>2017 Issues</h2>
+        <a href="https://www.dropbox.com/s/ix4cx6g614669xm/Issue%202-6-17.pdf1.pdf?dl=0&m=">Feb 6th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/i6foqq120d10mau/2-27-17%20Issue.pdf?dl=0">Feb 27th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/4kyuah76xuf0mwj/Issue%203-27-17.pdf?dl=0">Mar 27th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/ozoywshqdl1q52h/4-24-17%20Issue.pdf?dl=0">Apr 24th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/5t1c2heepy4c0x9/5-8-17%20Issue.pdf?dl=0&m=">May 8th</a> &nbsp;
+        <a href="https://www.dropbox.com/s/r7expuz5wayvbtm/9-18-17%20Issue%20PDF.pdf?dl=0">Sept 18th</a> &nbsp;<br>
+        <br>
+        <a href="https://www.dropbox.com/s/il9bzmgkqlqovov/10-2-17%20Issue%20PDF.pdf?dl=0&m=">Oct 2nd</a> &nbsp;
+        <a href="https://www.dropbox.com/s/lpgqy7q7u87ut6i/Issue%2010-23-17.pdf?dl=0&m=">Oct 23rd</a> &nbsp;
+        <a href="https://www.dropbox.com/s/wgn1pd31qo6yho2/11-6-17%20Issue%20PDF.pdf?dl=0&m=">Nov 6th</a>&nbsp;
+        <a href="https://www.dropbox.com/s/spfuegtatn4zgej/Issue%2011-20-17.pdf?dl=0&m=">Nov 20th</a>&nbsp;
+        <a href="https://www.dropbox.com/s/cg902f5wmz1nrmy/12-11-17%20Issue%206%20%281%29.pdf?dl=0">Dec 11th</a>&nbsp;
+        <a href="https://www.dropbox.com/s/qb9j90u2x8bktcd/Lyer%202017.pdf?dl=0">The Lyer</a> &nbsp;<br>
+        <br>
+        <a href="https://www.dropbox.com/s/xufs0aoyjpr7nwd/Supplement%20Spring%202017.pdf?dl=0">Supplement</a> &nbsp;
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2016 Issues</h2>
+      <a href="https://www.dropbox.com/s/p8epdlb5kvn08t7/2-8-16%20Full%20Issue.rs.pdf?dl=0">Feb 8th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/sgtqfsnhnsfevbm/2-22-16%20Full%20Issue.rs.pdf?dl=0">Feb 22nd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/zozpau6d9nb0os0/3-21-16%20Full%20Issue.rs.pdf?dl=0">Mar 21st</a> &nbsp;
+      <a href="https://www.dropbox.com/home/2016?preview=4-1-16LyerFullIssue.pdf">Apr 1st</a> &nbsp;
+      <a href="https://www.dropbox.com/s/5eq5wplelwl4ipc/4-18-16%20Complete%20SupplementRS.pdf?dl=0">Apr 16th</a> &nbsp;
+      <a href="https://www.dropbox.com/home/2016?preview=4-18-16FullIssue.pdf">Apr 16th Full Issue</a> &nbsp;<br>
+      <br>
+      <a href="https://www.dropbox.com/home/2016?preview=5-2-16+Full+IssueRS.pdf">May 2nd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/cip6i5h08bsjgea/Issue%209-19-16.pdf?dl=0">Sept 19th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/khj4uo8r2o9831c/10-3-16%20Issue.pdf?dl=0">Oct 3rd</a>&nbsp;
+      <a href="https://www.dropbox.com/s/1j9r9wnj5fn7q6x/10-24-16%20Issue.pdf?dl=0">Oct 24rth</a>&nbsp;
+      <a href="https://www.dropbox.com/s/mqz7o2gxxn8sl01/11-7-16%20Issue%20%25281%2529.pdf?dl=0">Nov 7th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/7wbjfo4hs5xr0vg/11-21-16%20Issue.pdf?dl=0">Nov 21st</a> &nbsp;<br>
+      <br>
+      <a href="https://www.dropbox.com/s/jm4563iap8ea44c/12-12-16%20Issue%206.pdf?dl=0">Dec 12th</a> &nbsp;
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2015</h2>
+      <a href="https://www.dropbox.com/s/ozlyci10hm34f4h/2-2-15%20FULL%20ISSUE%207%20-%20RS.pdf?dl=0">Feb 2nd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/c3sn2cokv646r4x/2-23-15%20FULL%20ISSUE%208%20-%20RS%20%281%29.pdf?dl=0">Feb 23rd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/h8yiq6p0fy0alev/3-23-15%20Full%20Issue%20RS.pdf?dl=0">Mar 23rd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/2mowdilvxtp6jb8/4-1-15%20Full%20Issue%20RS.pdf?dl=0">Apr 1st</a> &nbsp;
+      <a href="https://www.dropbox.com/s/7arbi0moimprq1g/4-13-15%20Full%20Issue%20RS.pdf?dl=0">Apr 13th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/hpju7731o8hghwy/4-27-15%20Full%20Issue%2012%20RS%20%281%29.pdf?dl=0">Apr 27th</a> &nbsp;<br>
+      <br>
+      <a href="https://www.dropbox.com/s/0xl852fxx866ags/4-27-15%20Supplement.pdf?dl=0">Apr 27th Supplement</a> &nbsp;
+      <a href="https://www.dropbox.com/s/4cecy000361j6w5/9-21-15%20Full%20Issue.rs.pdf?dl=0">Sept 21st</a> &nbsp;
+      <a href="https://www.dropbox.com/s/2d6zgkuca50aag8/10-5-15FullIssue.rs.pdf?dl=0">Oct 5th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/g3fyorlrmreyy26/10-26-15%20Full%20Issue.rs-1.pdf?dl=0">Oct 26th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/o3l5m0ezbx78t94/11-9-15FullIssue.rs.pdf?dl=0">Nov 9th</a>&nbsp;<br>
+      <br>
+      <a href="https://www.dropbox.com/s/7lefj4155h04l7i/11-23-15%20Full%20Issue.rs.pdf?dl=0">Nov 23rd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/y7u9dettbt7ffnp/12-14-15%20Full%20Issue.rs..pdf?dl=0">Dec 14th</a> &nbsp;
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2014</h2>
+      <a href="https://www.dropbox.com/s/n7sw0in877d9dvj/2-3-14_PDF.pdf?dl=0">Feb 3rd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/yjp8isno4ntjepq/2-17-14_Volume%2035%20Issue%208.pdf?dl=0">Feb 17th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/0rgmtyqy1ihfboq/3-17-14_Issue%209-1.pdf?dl=0">Mar 17th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/4o9g3kzjxsfzaa8/4-1-14%20Flyer.pdf?dl=0">Apr 1st</a> &nbsp;
+      <a href="https://www.dropbox.com/home/2014?preview=4-14-14+TheFlyer.pdf">Apr 14th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/d3qu306l03xpt60/4-28-14%20Issue%206.pdf?dl=0">Apr 28th</a> &nbsp;<br>
+      <br>
+      <a href="https://www.dropbox.com/s/cidd6sgbsduji6b/9-22-14%20Full%20Issue%20RS.pdf?dl=0">Sept 22nd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/fdtmh4xc669a11i/10-6-14%20Full%20Issue%20RS%20%281%29.pdf?dl=0">Oct 6th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/l8lw06jamchm5xu/10-20-14%20Full%20Issue%20RS.pdf?dl=0">Oct 20th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/0bf1m2kg62e09l9/11-3-14%20Full%20Issue%20RS.pdf?dl=0">Nov 3rd</a>&nbsp;
+      <a href="https://www.dropbox.com/s/v4in748v3nhbqol/11-17-14%20Full%20Issue%20.pdf?dl=0">Nov 17th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/tgkxxya8ipviiwo/12-8-14%20Full%20Issue%20RS%20%281%29.pdf?dl=0">Dec 8th</a>&nbsp;
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2013</h2>
+      <a href="https://www.dropbox.com/s/pvh6bflq2umetb7/2_4_13_Vol34_Issue7.pdf?dl=0">Feb 4th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/e347wdhkkmb7i74/2_18_13_Vol34_Issue%208.pdf?dl=0">Feb 18th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/os2q2vrhw4idz71/3_18_13_Vol34_Issue9.pdf?dl=0">Mar 18th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/xuacbv8d06nn1re/4_08_13_Vol%2034_Issue11.pdf?dl=0">Apr 8th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/00twjq7bwpamfjz/4-22-13_The%20Flyer-1.pdf?dl=0">Apr 22nd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/72pxxykfup1kig1/9-23-13%20Issue%201-1.pdf?dl=0">Sept 23rd</a> &nbsp;
+      <a href="https://www.dropbox.com/s/b12kkn6a22v0wyx/10-7-13%20issue%202.pdf?dl=0">Oct 7th</a> &nbsp;
+      <a href="https://www.dropbox.com/s/qwmfot4rpkbhfky/10_21_13%20vol%2035.pdf?dl=0">Oct 21st</a> &nbsp;
+      <a href="https://www.dropbox.com/s/l5px1mmr3ql49og/11-4-13%20vol%2035%20Issue%204.pdf?dl=0">Nov 4th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/rb89mdn3rbzkok3/11-18-13%20issue%205.pdf?dl=0">Nov 18th</a>&nbsp;
+      <a href="https://www.dropbox.com/s/7g3icbgwmcvczln/12-9-13%20issue6.pdf?dl=0">Dec 9th</a>&nbsp;
+    </div>
+  </div>
+</div>
+</body>
+</html>
